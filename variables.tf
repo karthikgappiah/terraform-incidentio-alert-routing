@@ -94,3 +94,15 @@ variable "backstop_retries" {
   type        = number
   default     = 2
 }
+
+variable "alert_source_name" {
+  description = "Name of the HTTP alert source that monitoring tools post to."
+  type        = string
+  default     = "Alert routing"
+}
+
+variable "team_alert_attribute_name" {
+  description = "Name of the built-in alert attribute that holds the alert's owning team."
+  type        = string
+  default     = "Team"
+}
