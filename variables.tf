@@ -106,3 +106,33 @@ variable "team_alert_attribute_name" {
   type        = string
   default     = "Team"
 }
+
+variable "incident_template_name" {
+  description = "Name of the incident template used by the route."
+  type        = string
+  default     = "Alert incident"
+}
+
+variable "tier_severity" {
+  description = "Incident severity by service tier, as an ordered list. The first matching tier wins. Severity names must exist in the workspace."
+  type = list(object({
+    tier     = string
+    severity = string
+  }))
+  default = [
+    { tier = "tier-0", severity = "Critical" },
+    { tier = "tier-1", severity = "Major" },
+  ]
+}
+
+variable "default_severity" {
+  description = "Incident severity for a service whose tier is not in tier_severity, or that has no tier."
+  type        = string
+  default     = "Minor"
+}
+
+variable "affected_teams_custom_field_name" {
+  description = "Name of an incident custom field that accumulates the alert's team. Null leaves it unset."
+  type        = string
+  default     = null
+}
