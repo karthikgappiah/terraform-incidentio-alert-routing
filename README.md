@@ -1,4 +1,4 @@
-# terraform-incidentio-module-alert-routing
+# terraform-incidentio-alert-routing
 
 Terraform module for incident.io alert routing driven by the Catalog. Give it your teams and your services and it builds one alert source, one dynamic route, an escalation path per team and the incident template, so onboarding a team is a data change.
 
@@ -26,7 +26,7 @@ Per team in `var.teams` you get a Catalog entry, an on-call schedule with a week
 
 ```hcl
 module "alert_routing" {
-  source = "github.com/karthikgappiah/terraform-incidentio-module-alert-routing?ref=v0.1.0"
+  source = "github.com/karthikgappiah/terraform-incidentio-alert-routing?ref=v0.1.1"
 
   teams    = yamldecode(file("${path.module}/teams.yaml"))
   services = yamldecode(file("${path.module}/services.yaml"))
