@@ -1,0 +1,8 @@
+.env
+.env.*
+.DS_Store
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
