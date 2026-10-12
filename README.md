@@ -1,8 +1,10 @@
 # terraform-incidentio-alert-routing
 
+[![CI](https://github.com/karthikgappiah/terraform-incidentio-alert-routing/actions/workflows/ci.yml/badge.svg)](https://github.com/karthikgappiah/terraform-incidentio-alert-routing/actions/workflows/ci.yml)
+
 Terraform module for incident.io alert routing driven by the Catalog. Give it your teams and your services and it builds one alert source, one dynamic route, an escalation path per team and the incident template, so onboarding a team is a data change.
 
-Extracted from [terraform-incidentio-appiahco](https://github.com/karthikgappiah/terraform-incidentio-appiahco), the Netflix take-home build, which now calls this module.
+A worked consumer of this module is [terraform-incidentio-appiahco](https://github.com/karthikgappiah/terraform-incidentio-appiahco).
 
 ## What it builds
 
@@ -108,6 +110,10 @@ A complete call is in [examples/complete](examples/complete). The provider reads
 - Terraform 1.7 or later
 - `incident-io/incident` provider 7.6.1 or later, below 8.0.0
 - Severity names in `tier_severity` and `default_severity`, and the custom field if set, must already exist in the workspace
+
+## Versioning
+
+Releases are git tags following [Semantic Versioning](https://semver.org). Pin the `ref` in `source` to a tag and review the plan before moving to a new one.
 
 ## Development
 
