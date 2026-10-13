@@ -54,3 +54,25 @@ variable "service_type_description" {
   type        = string
   default     = "Services that send alerts, and the team that owns each."
 }
+
+variable "rotation_start" {
+  description = "When every team's first weekly shift starts, as an RFC 3339 timestamp. Pick a Monday at the hour you want handover to happen, in the past if someone should be on call now."
+  type        = string
+
+  validation {
+    condition     = can(formatdate("YYYY", var.rotation_start))
+    error_message = "rotation_start must be an RFC 3339 timestamp, such as 2026-10-05T16:00:00Z."
+  }
+}
+
+variable "timezone" {
+  description = "IANA timezone of every schedule and of working hours."
+  type        = string
+  default     = "UTC"
+}
+
+variable "holiday_country_codes" {
+  description = "Countries whose public holidays are shown on every schedule. Empty shows none."
+  type        = list(string)
+  default     = []
+}
