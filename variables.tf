@@ -76,3 +76,21 @@ variable "holiday_country_codes" {
   type        = list(string)
   default     = []
 }
+
+variable "urgent_priority_name" {
+  description = "Name of the alert priority that pages at high urgency and opens incidents. Priorities are built into incident.io; this one must exist."
+  type        = string
+  default     = "Urgent"
+}
+
+variable "ack_timeout_seconds" {
+  description = "How long a level waits for an acknowledgement before the page moves on."
+  type        = number
+  default     = 300
+}
+
+variable "backstop_retries" {
+  description = "How many times the backstop team's path repeats when nobody acknowledges."
+  type        = number
+  default     = 2
+}
