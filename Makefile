@@ -3,6 +3,7 @@
 
 check:
 	terraform fmt -check -recursive
+	terraform init -backend=false -input=false >/dev/null
 	terraform validate -no-color
 	terraform -chdir=examples/complete init -backend=false -input=false >/dev/null
 	terraform -chdir=examples/complete validate -no-color
