@@ -136,3 +136,15 @@ variable "affected_teams_custom_field_name" {
   type        = string
   default     = null
 }
+
+variable "route_name" {
+  description = "Name of the one alert route."
+  type        = string
+  default     = "Alert routing"
+}
+
+variable "grouping_window_seconds" {
+  description = "Alerts for the same Service within this window join one incident, and each new alert extends it."
+  type        = number
+  default     = 1800
+}
