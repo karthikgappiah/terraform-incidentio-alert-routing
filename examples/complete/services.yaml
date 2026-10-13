@@ -1,0 +1,13 @@
+video-transcoding-service:
+  owner: streaming
+  tier: tier-1
+  lifecycle: production
+
+recommendation-engine:
+  owner: api
+  tier: tier-1
+  lifecycle: production
+
+legacy-batch-processor-deprecated:
+  owner: sre
+  lifecycle: deprecated

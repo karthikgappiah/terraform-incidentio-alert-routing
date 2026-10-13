@@ -1,0 +1,17 @@
+sre:
+  name: SRE
+  members: [oncall@example.com]
+  on_call: [oncall@example.com]
+  backstop: true
+
+streaming:
+  name: Streaming
+  aliases: [streaming-infrastructure]
+  members: [oncall@example.com]
+  on_call: [oncall@example.com]
+
+api:
+  name: API
+  aliases: [api-platform, ml-platform]
+  members: [oncall@example.com]
+  on_call: [oncall@example.com]
