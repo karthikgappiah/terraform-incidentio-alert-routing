@@ -12,3 +12,7 @@ data "incident_catalog_entry" "urgent" {
   catalog_type_id = data.incident_catalog_type.alert_priority.id
   identifier      = var.urgent_priority_name
 }
+
+data "incident_alert_attribute" "team" {
+  name = var.team_alert_attribute_name
+}
