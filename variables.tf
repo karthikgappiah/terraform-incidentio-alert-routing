@@ -42,3 +42,15 @@ variable "services" {
     aliases   = optional(list(string), [])
   }))
 }
+
+variable "team_type_description" {
+  description = "Description of the Team Catalog type."
+  type        = string
+  default     = "All teams that can be paged."
+}
+
+variable "service_type_description" {
+  description = "Description of the Service Catalog type."
+  type        = string
+  default     = "Services that send alerts, and the team that owns each."
+}
